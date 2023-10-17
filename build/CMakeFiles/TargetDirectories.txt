@@ -1,0 +1,4 @@
+/root/hello/build/CMakeFiles/rebuild_cache.dir
+/root/hello/build/CMakeFiles/edit_cache.dir
+/root/hello/build/CMakeFiles/client.dir
+/root/hello/build/CMakeFiles/server.dir
