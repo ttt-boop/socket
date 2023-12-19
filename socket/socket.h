@@ -27,11 +27,12 @@ namespace cc
                 int recv(char * buf, int len);
                 void close();
 
-            protected:
+            
+            //protected:
                 std::string m_ip;
                 int m_port;
                 int m_sockfd;
 
         };
     }
-} // namespace yazi
+} // namespace cc

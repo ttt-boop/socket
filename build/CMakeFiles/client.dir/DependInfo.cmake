@@ -1,22 +1,20 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/root/hello/client.cpp" "/root/hello/build/CMakeFiles/client.dir/client.cpp.o"
-  "/root/hello/socket/socket.cpp" "/root/hello/build/CMakeFiles/client.dir/socket/socket.cpp.o"
-  "/root/hello/util/Logger.cpp" "/root/hello/build/CMakeFiles/client.dir/util/Logger.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../."
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/root/socket/client.cpp" "CMakeFiles/client.dir/client.cpp.o" "gcc" "CMakeFiles/client.dir/client.cpp.o.d"
+  "/root/socket/socket/socket.cpp" "CMakeFiles/client.dir/socket/socket.cpp.o" "gcc" "CMakeFiles/client.dir/socket/socket.cpp.o.d"
+  "/root/socket/util/Logger.cpp" "CMakeFiles/client.dir/util/Logger.cpp.o" "gcc" "CMakeFiles/client.dir/util/Logger.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.
