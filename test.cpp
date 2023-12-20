@@ -7,7 +7,7 @@
 #include<vector>
 //#include "util/Logger.h"
 #include "socket/socket.h"
-
+#include "socket/utils.h"
 using namespace cc::socket_;
 using namespace std;
 
@@ -24,33 +24,51 @@ int main(){
     // info("info msg");
     // fatal("fatal msg");
     //std::cout<<"over!"<<std::endl;
-    Socket s1;
-    s1.bind("127.0.0.1",8081);
-    s1.listen(5);
-    int opt = 1;
-        vector<int> opts = {SO_REUSEPORT, SO_REUSEADDR};
-        for (unsigned int i = 0; i < opts.size(); i++)
-        {
-            if ((setsockopt(s1.m_sockfd, SOL_SOCKET, opts[i], (char *)&opt, sizeof(opt))) < 0)
-            {
-                cout << ": set listen sockopt Error" << endl;
-                return false;
-            }
-        }
+    // Socket s1;
+    // s1.bind("127.0.0.1",8081);
+    // s1.listen(5);
+    // int opt = 1;
+    //     vector<int> opts = {SO_REUSEPORT, SO_REUSEADDR};
+    //     for (unsigned int i = 0; i < opts.size(); i++)
+    //     {
+    //         if ((setsockopt(s1.m_sockfd, SOL_SOCKET, opts[i], (char *)&opt, sizeof(opt))) < 0)
+    //         {
+    //             cout << ": set listen sockopt Error" << endl;
+    //             return false;
+    //         }
+    //     }
 
-    //s1.close();
+    // //s1.close();
 
-    Socket s2;
-    for (unsigned int i = 0; i < opts.size(); i++)
-        {
-            if ((setsockopt(s2.m_sockfd, SOL_SOCKET, opts[i], (char *)&opt, sizeof(opt))) < 0)
-            {
-                cout << ": set listen sockopt Error" << endl;
-                return false;
-            }
-        }
-    s2.bind("127.0.0.1",8081);
-    s2.listen(5);
+    // Socket s2;
+    // for (unsigned int i = 0; i < opts.size(); i++)
+    //     {
+    //         if ((setsockopt(s2.m_sockfd, SOL_SOCKET, opts[i], (char *)&opt, sizeof(opt))) < 0)
+    //         {
+    //             cout << ": set listen sockopt Error" << endl;
+    //             return false;
+    //         }
+    //     }
+    // s2.bind("127.0.0.1",8081);
+    // s2.listen(5);
+    cerr<<"-----------test getDiskInfo\n";
+    Utils util;
+    Utils::hardDisk hd;
+    util.getDiskInfo("/root", hd);
+    cerr<<"-----------"<<endl;
+
+    cerr<<"-----------test isFileExist\n";
+    if (util.isFileExist("/root/socket/test.log")) cout <<"exist"<<endl;
+    else cout<<"not exist"<<endl;
+    cerr<<"-----------"<<endl;
+    
+    cerr<<"-----------test getFileByteSize\n";
+    cout<<"file size is "<<util.getFileByteSize("/root/socket/test.log")<<endl;
+    cerr<<"-----------"<<endl;
+
+    cerr<<"-----------test getTimestamp\n";
+    cout<<"timestamp is "<<util.getTimestamp()<<endl;
+    cerr<<"-----------"<<endl;
 
     return 0;
 
